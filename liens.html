@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liens - Brawl Stars</title>
+    <style>
+        body { font-family: sans-serif; margin: 0; padding: 20px; display: flex; flex-direction: column; min-height: 100vh; }
+        .navbar { display: flex; align-items: center; margin-bottom: 20px; font-weight: bold; color: #d4a017; }
+        .menu-lines { font-size: 24px; cursor: pointer; margin-right: 15px; }
+        .btn { display: block; background: #8b7355; color: white; padding: 15px; text-decoration: none; text-align: center; border-radius: 8px; margin-bottom: 10px; font-weight: bold; }
+        .content { flex: 1; }
+        footer { text-align: center; font-size: 10px; padding: 20px; color: gray; }
+        #sideMenu { height: 100%; width: 0; position: fixed; z-index: 1000; top: 0; left: 0; background-color: #111; overflow-x: hidden; transition: 0.5s; padding-top: 60px; }
+        #sideMenu a { padding: 15px 30px; text-decoration: none; font-size: 22px; color: #818181; display: block; }
+    </style>
+</head>
+<body>
+    <div id="sideMenu">
+        <a href="javascript:void(0)" onclick="closeNav()">&times;</a>
+        <a href="index.html">🏠 Accueil</a>
+        <a href="staff.html">👤 Staff</a>
+        <a href="actu.html">📰 Actus</a>
+        <a href="questions.html">❓ Questions</a>
+        <a href="liens.html">🔗 Liens</a>
+    </div>
+    <div class="navbar">
+        <div class="menu-lines" onclick="openNav()">☰</div>
+        <div>NOS RÉSEAUX</div>
+    </div>
+    <div class="content">
+        <h3>Rejoins-nous :</h3>
+        <a href="https://discord.gg/s7yUW6RPG" class="btn">Discord Officiel</a>
+        <a href="https://whatsapp.com/channel/0029Vb5cw3lKLaHtkuHhqZ3X" class="btn">WhatsApp (Canal)</a>
+        <a href="https://chat.whatsapp.com/DU07U24caJ9LEbZK5xDuPl" class="btn">WhatsApp (Groupe)</a>
+    </div>
+    <footer>BsMax @ 2026</footer>
+    <script>
+        function openNav() { document.getElementById("sideMenu").style.width = "250px"; }
+        function closeNav() { document.getElementById("sideMenu").style.width = "0"; }
+    </script>
+</body>
+</html>
