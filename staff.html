@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff - Brawl Stars</title>
+    <style>
+        body { font-family: sans-serif; margin: 0; background: #f4f4f4; display: flex; flex-direction: column; min-height: 100vh; }
+        .navbar { display: flex; align-items: center; padding: 10px 20px; background: white; border-bottom: 1px solid #ddd; }
+        .menu-lines { font-size: 24px; cursor: pointer; color: #d4a017; margin-right: 20px; }
+        .hero { background: #2c003e; color: white; text-align: center; padding: 40px; }
+        .content { padding: 20px; max-width: 800px; margin: auto; flex: 1; }
+        .card { background: white; padding: 15px; margin-bottom: 15px; border-left: 5px solid #d4a017; border-radius: 5px; }
+        footer { text-align: center; font-size: 10px; padding: 20px; color: gray; }
+        #sideMenu { height: 100%; width: 0; position: fixed; z-index: 1000; top: 0; left: 0; background-color: #111; overflow-x: hidden; transition: 0.5s; padding-top: 60px; }
+        #sideMenu a { padding: 15px 30px; text-decoration: none; font-size: 22px; color: #818181; display: block; }
+    </style>
+</head>
+<body>
+    <div id="sideMenu">
+        <a href="javascript:void(0)" onclick="closeNav()">&times;</a>
+        <a href="index.html">🏠 Accueil</a>
+        <a href="staff.html">👤 Staff</a>
+        <a href="actu.html">📰 Actus</a>
+        <a href="questions.html">❓ Questions</a>
+        <a href="liens.html">🔗 Liens</a>
+    </div>
+    <div class="navbar">
+        <div class="menu-lines" onclick="openNav()">☰</div>
+        <div style="font-weight:bold;">STAFF || MAX</div>
+    </div>
+    <div class="hero"><h1>L'ÉQUIPE</h1></div>
+    <div class="content">
+        <div class="card" style="border-color: #e74c3c;">
+            <h3>Propriétaire : Maxime 222 🥱</h3>
+            <p>Main : Léon | ID : AptMaxime222</p>
+        </div>
+        <div class="card"><b>Admin 1 👨‍🦳</b> - Main : Ambre/Shelly</div>
+        <div class="card"><b>Admin 2 🤔</b> - Main : Kenji/Tick | 🎨 Dessinateur</div>
+        <div class="card"><b>Admin 3 🌵</b> - GAB (Ancien Proprio)</div>
+        <div class="card"><b>Admin 4 🤯</b> - Main : Corbac</div>
+        <div class="card"><b>Admin 5 ⍢⃝</b> - Main : Élis@</div>
+        <div class="card"><b>Admin 6 🤣</b> - Main : Mandy</div>
+        <div class="card" style="background:#eee;"><b>Admin BS 👻</b> - Nouveau compte</div>
+    </div>
+    <footer>BsMax @ 2026</footer>
+    <script>
+        function openNav() { document.getElementById("sideMenu").style.width = "250px"; }
+        function closeNav() { document.getElementById("sideMenu").style.width = "0"; }
+    </script>
+</body>
+</html>
