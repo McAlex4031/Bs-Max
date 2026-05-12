@@ -107,10 +107,31 @@
 
     <footer>BsMax @ 2026</footer>
 
+   <footer>BsMax @ 2026</footer>
+
     <script>
-        function openNav() { document.getElementById("sideMenu").style.width = "100%"; }
-        function closeNav() { document.getElementById("sideMenu").style.width = "0"; }
-        function toggleDarkMode() { document.body.classList.toggle('dark-mode'); }
+        function openNav() { 
+            document.getElementById("sideMenu").style.width = "100%"; 
+        }
+        
+        function closeNav() { 
+            document.getElementById("sideMenu").style.width = "0"; 
+        }
+
+        // Gère l'activation et la sauvegarde du mode sombre
+        function toggleDarkMode() {
+            const isDark = document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', isDark);
+        }
+
+        // Vérifie la préférence au chargement de la page
+        window.onload = function() {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.body.classList.add('dark-mode');
+            }
+        };
     </script>
+</body>
+</html>
 </body>
 </html>
