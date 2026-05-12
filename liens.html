@@ -2,36 +2,148 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Réseaux - MAX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liens - MAX</title>
+    <link rel="icon" type="image/png" href="https://files.catbox.moe/p9o75y.png">
     <style>
-        body { font-family: 'Arial Black', sans-serif; margin: 0; background: #f39c12; padding: 20px; }
-        .navbar { display: flex; align-items: center; padding: 25px; background: #d35400; color: white; border-bottom: 8px solid #000; border-radius: 20px; }
-        .menu-lines { font-size: 40px; cursor: pointer; color: #ffcb05; margin-right: 30px; }
-        .content { max-width: 700px; margin: 50px auto; }
-        .btn-link { display: block; background: #fff; color: #000; padding: 40px; margin-bottom: 30px; border-radius: 30px; text-decoration: none; font-size: 35px; border: 8px solid #000; box-shadow: 15px 15px 0px #000; text-align: center; }
-        .btn-link:hover { background: #ffcb05; }
-        #sideMenu { height: 100%; width: 0; position: fixed; z-index: 2000; top: 0; left: 0; background-color: #d35400; overflow-x: hidden; transition: 0.4s; padding-top: 60px; }
-        #sideMenu a { padding: 25px 40px; text-decoration: none; font-size: 32px; color: white; display: block; font-weight: 900; }
+        :root { 
+            --bs-green: #27ae60; 
+            --bs-green-dark: #1e8449;
+            --bg: #ffffff; 
+            --text: #000000; 
+            --card-bg: #f9f9f9;
+            --border: #000000;
+        }
+        
+        .dark-mode { 
+            --bg: #121212; 
+            --text: #ffffff; 
+            --card-bg: #1e1e1e;
+            --border: var(--bs-green);
+        }
+
+        body { 
+            background: var(--bg); 
+            color: var(--text); 
+            font-family: 'Lato', sans-serif; 
+            margin: 0; 
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 20px; 
+            background: var(--bg); 
+            border-bottom: 6px solid var(--bs-green); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000;
+        }
+        
+        .nav-title { font-weight: 900; font-size: 22px; }
+        .menu-lines { font-size: 35px; cursor: pointer; color: var(--bs-green); }
+        .btn-mode { background: var(--bs-green); color: #fff; border: none; padding: 10px 20px; border-radius: 12px; cursor: pointer; font-weight: 900; }
+
+        .content { padding: 30px; max-width: 800px; margin: auto; flex: 1; width: 90%; }
+
+        h1 { text-align: center; font-size: 40px; color: var(--bs-green); margin-bottom: 30px; }
+        .dark-mode h1 { color: #fff; }
+
+        h2 { border-left: 8px solid var(--bs-green); padding-left: 15px; margin: 40px 0 20px 0; }
+
+        /* Boutons Principaux */
+        .btn-main { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            background: var(--card-bg); 
+            color: var(--text); 
+            padding: 25px; 
+            margin-bottom: 20px; 
+            border-radius: 20px; 
+            text-decoration: none; 
+            font-size: 22px; 
+            font-weight: 900; 
+            border: 5px solid var(--border); 
+            box-shadow: 8px 8px 0px var(--bs-green);
+            transition: 0.2s;
+        }
+        .btn-main:active { transform: translate(4px, 4px); box-shadow: 2px 2px 0px var(--bs-green); }
+
+        /* Section Collab */
+        .collab-section { 
+            background: rgba(39, 174, 96, 0.1); 
+            padding: 20px; 
+            border-radius: 25px; 
+            border: 3px dashed var(--bs-green);
+        }
+        .btn-collab { 
+            display: block; 
+            background: white; 
+            color: black; 
+            padding: 15px; 
+            margin-bottom: 10px; 
+            border-radius: 12px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            text-align: center;
+            border: 2px solid black;
+        }
+        .dark-mode .btn-collab { background: #333; color: white; border-color: var(--bs-green); }
+
+        #sideMenu { height: 100%; width: 0; position: fixed; z-index: 2000; top: 0; left: 0; background-color: var(--bs-green); overflow-x: hidden; transition: 0.4s; padding-top: 60px; }
+        #sideMenu a { padding: 20px 40px; text-decoration: none; font-size: 28px; color: white; display: block; font-weight: 900; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        
+        footer { text-align: center; font-size: 12px; padding: 40px; color: gray; }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700;900&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <div id="sideMenu">
-        <a href="javascript:void(0)" onclick="closeNav()">&times;</a>
+        <a href="javascript:void(0)" onclick="closeNav()" style="font-size:50px;">&times;</a>
         <a href="index.html">ACCUEIL</a>
         <a href="staff.html">L'ÉQUIPE (STAFF)</a>
         <a href="actu.html">ACTUALITÉS</a>
         <a href="questions.html">QUESTIONS</a>
         <a href="liens.html">RESEAUX SOCIAUX</a>
     </div>
-    <div class="navbar"><div class="menu-lines" onclick="openNav()">☰</div><div>NOS RÉSEAUX</div></div>
-    <div class="content">
-        <a href="https://discord.gg/s7yUW6RPG" class="btn-link">💬 DISCORD</a>
-        <a href="https://whatsapp.com/channel/0029Vb5cw3lKLaHtkuHhqZ3X" class="btn-link">📱 CANAL WA</a>
-        <a href="https://youtube.com/@mcale.x" class="btn-link">🎥 YOUTUBE</a>
+
+    <div class="navbar">
+        <span class="nav-title">🔗 LIENS || MAX 🥱</span>
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <button class="btn-mode" onclick="toggleDarkMode()">🌓 MODE</button>
+            <div class="menu-lines" onclick="openNav()">☰</div>
+        </div>
     </div>
+
+    <div class="content">
+        <h1>Nos Réseaux</h1>
+
+        <h2>Voici la commu de la chaine :</h2>
+        <a href="https://chat.whatsapp.com/DU07U24caJ9LEbZK5xDuPl" class="btn-main">👥 GROUPE WHATSAPP</a>
+        <a href="https://discord.gg/s7yUW6RPG" class="btn-main" style="box-shadow: 8px 8px 0px #5865F2;">🎮 DISCORD</a>
+        <a href="https://sites.google.com/view/brawl-stars-max" class="btn-main">🌐 ANCIEN SITE WEB</a>
+
+        <h2>🤝 Collaborations</h2>
+        <div class="collab-section">
+            <a href="https://whatsapp.com/channel/0029VafubbmDTkKC4YiT6Q1t" class="btn-collab">Code:SFK</a>
+            <a href="https://whatsapp.com/channel/0029VaveF0JDeOMzX2jSFz3D" class="btn-collab">Brawl Stars Gaming</a>
+            <a href="https://whatsapp.com/channel/0029Vb5yf2o3mFXxF0Skft23" class="btn-collab">L@ītyx Assemblée #Lanceløt</a>
+        </div>
+    </div>
+
+    <footer>BsMax @ 2026</footer>
+
     <script>
         function openNav() { document.getElementById("sideMenu").style.width = "100%"; }
         function closeNav() { document.getElementById("sideMenu").style.width = "0"; }
+        function toggleDarkMode() { document.body.classList.toggle('dark-mode'); }
     </script>
 </body>
 </html>
