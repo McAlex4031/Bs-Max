@@ -187,5 +187,16 @@
         }
     });
 </script>
+    <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2026/05/12/19/20260512194510-0FOV6V5Q.js" defer></script>
+
+<script>
+  // Ce script force l'ouverture de la bulle après 1 seconde pour attirer l'attention
+  window.botpressWebChat.onEvent(function () {
+    setTimeout(() => {
+      window.botpressWebChat.sendEvent({ type: 'show' });
+    }, 1000);
+  }, ['LIFECYCLE.LOADED']);
+</script>
 </body>
 </html>
