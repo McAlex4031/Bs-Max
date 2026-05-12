@@ -2,37 +2,115 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Actualités - MAX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actus - MAX</title>
+    <link rel="icon" type="image/png" href="https://files.catbox.moe/p9o75y.png">
     <style>
-        body { font-family: 'Arial Black', sans-serif; margin: 0; background: #000; color: white; display: flex; flex-direction: column; min-height: 100vh; }
-        .navbar { display: flex; align-items: center; padding: 25px; border-bottom: 8px solid #e74c3c; background: #111; }
-        .menu-lines { font-size: 40px; cursor: pointer; color: #e74c3c; margin-right: 30px; }
-        .content { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px; }
-        .no-news { border: 8px solid #e74c3c; padding: 50px; border-radius: 40px; background: #1a1a1a; box-shadow: 0 0 30px #e74c3c; }
-        #sideMenu { height: 100%; width: 0; position: fixed; z-index: 2000; top: 0; left: 0; background-color: #e74c3c; overflow-x: hidden; transition: 0.4s; padding-top: 60px; }
-        #sideMenu a { padding: 25px 40px; text-decoration: none; font-size: 32px; color: white; display: block; font-weight: 900; }
+        :root { 
+            --bs-red: #e74c3c; 
+            --bg: #ffffff; 
+            --text: #000000; 
+            --card-bg: #f9f9f9;
+            --border: #000000;
+        }
+        
+        .dark-mode { 
+            --bg: #121212; 
+            --text: #ffffff; 
+            --card-bg: #1e1e1e;
+            --border: var(--bs-red);
+        }
+
+        body { 
+            background: var(--bg); 
+            color: var(--text); 
+            font-family: 'Lato', sans-serif; 
+            margin: 0; 
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 20px; 
+            background: var(--bg); 
+            border-bottom: 6px solid var(--bs-red); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000;
+        }
+        
+        .nav-title { font-weight: 900; font-size: 22px; }
+        .menu-lines { font-size: 35px; cursor: pointer; color: var(--bs-red); }
+        .btn-mode { background: var(--bs-red); color: #fff; border: none; padding: 10px 20px; border-radius: 12px; cursor: pointer; font-weight: 900; }
+
+        .content { 
+            padding: 30px; 
+            max-width: 900px; 
+            margin: auto; 
+            flex: 1; 
+            width: 90%; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .no-news-box { 
+            background: var(--card-bg); 
+            border: 5px solid var(--border); 
+            border-radius: 30px; 
+            padding: 50px 20px; 
+            text-align: center;
+            box-shadow: 12px 12px 0px var(--bs-red);
+            width: 100%;
+        }
+
+        h1 { font-size: 45px; margin-bottom: 10px; }
+        p { font-size: 20px; color: gray; }
+
+        #sideMenu { height: 100%; width: 0; position: fixed; z-index: 2000; top: 0; left: 0; background-color: var(--bs-red); overflow-x: hidden; transition: 0.4s; padding-top: 60px; }
+        #sideMenu a { padding: 20px 40px; text-decoration: none; font-size: 28px; color: white; display: block; font-weight: 900; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        
+        footer { text-align: center; font-size: 12px; padding: 40px; color: gray; }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700;900&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <div id="sideMenu">
-        <a href="javascript:void(0)" onclick="closeNav()">&times;</a>
+        <a href="javascript:void(0)" onclick="closeNav()" style="font-size:50px;">&times;</a>
         <a href="index.html">ACCUEIL</a>
         <a href="staff.html">L'ÉQUIPE (STAFF)</a>
         <a href="actu.html">ACTUALITÉS</a>
         <a href="questions.html">QUESTIONS</a>
         <a href="liens.html">RESEAUX SOCIAUX</a>
     </div>
-    <div class="navbar"><div class="menu-lines" onclick="openNav()">☰</div><div>ACTUS BRAWL</div></div>
-    <div class="content">
-        <div class="no-news">
-            <h1 style="font-size: 50px;">AUCUNE ACTU... 🥱</h1>
-            <p style="font-size: 20px;">Repasse demain, le staff dort !</p>
+
+    <div class="navbar">
+        <span class="nav-title">📰 ACTUS || MAX 🥱</span>
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <button class="btn-mode" onclick="toggleDarkMode()">🌓 MODE</button>
+            <div class="menu-lines" onclick="openNav()">☰</div>
         </div>
     </div>
-    <p style="text-align: center; color: #555;">BsMax @ 2026</p>
+
+    <div class="content">
+        <div class="no-news-box">
+            <h1>AUCUNE ACTU... 🥱</h1>
+            <p>Repasse demain, le staff dort ! 💤</p>
+        </div>
+    </div>
+
+    <footer>BsMax @ 2026</footer>
+
     <script>
         function openNav() { document.getElementById("sideMenu").style.width = "100%"; }
         function closeNav() { document.getElementById("sideMenu").style.width = "0"; }
+        function toggleDarkMode() { document.body.classList.toggle('dark-mode'); }
     </script>
 </body>
 </html>
