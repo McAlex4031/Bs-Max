@@ -38,13 +38,12 @@
             text-align: left;
         }
 
-        /* Barre de progression mise à jour */
         .progress-container { 
             width: 100%; max-width: 600px; background: #333; border: 5px solid var(--border); 
             border-radius: 50px; margin: 30px auto; height: 45px; position: relative; overflow: hidden; 
         }
         .progress-fill { 
-            width: 93%; /* Progression visuelle vers 750 */
+            width: 93%; /* Progression vers 750 */
             height: 100%; 
             background: linear-gradient(to bottom, #ffeb3b, #fbc02d); 
             border-right: 4px solid #000; 
@@ -61,6 +60,18 @@
         .next { color: #e74c3c; }
 
         .btn-mode { background: var(--text); color: var(--bg); border: none; padding: 10px 20px; border-radius: 12px; cursor: pointer; font-weight: 900; }
+        
+        /* Style du bouton Spike Bot */
+        .btn-spike {
+            display: inline-block;
+            padding: 15px 25px;
+            font-weight: 900;
+            border-radius: 10px;
+            border: 3px solid black;
+            transition: 0.2s;
+        }
+        .btn-spike:hover { transform: scale(1.05); }
+
         #sideMenu { height: 100%; width: 0; position: fixed; z-index: 2000; top: 0; left: 0; background-color: var(--bs-yellow); overflow-x: hidden; transition: 0.4s; padding-top: 60px; }
         #sideMenu a { padding: 20px 40px; text-decoration: none; font-size: 28px; color: black; display: block; font-weight: 900; }
         footer { text-align: center; font-size: 12px; padding: 40px; color: gray; }
@@ -98,16 +109,23 @@
             </ul>
             <p><b>Vous y trouverez :</b></p>
             <ul>
-                <li>des conceptes de skin</li>
+                <li>des conseptes de skin</li>
                 <li>des leaks pour les prochaines saisons</li>
                 <li>des informations importantes</li>
                 <li>des discutions entre fans, théorie...</li>
                 <li>Des astuces pour progresser</li>
             </ul>
-            <p style="text-align: center; font-size: 20px; border: 2px solid #000; padding: 10px; border-radius: 15px; background: white;">
-                <b>🤩 Abonnez vous !!! Vous ne serez pas déçu 🤩</b>
+            <p style="text-align: center; font-size: 20px; border: 2px solid #000; padding: 10px; border-radius: 15px; background: white; color: black;">
+                <b>🤩 Abonnez vous !!! Vous ne seraient pas déçu 🤩</b>
             </p>
             <p style="text-align: center; font-size: 18px;"><b>🌵 Spike est l'emblème de la chaine ! 🌵</b></p>
+        </div>
+
+        <div style="text-align: center; margin: 40px 0; padding: 20px; border: 2px dashed #51e443; border-radius: 15px; background-color: rgba(81, 228, 67, 0.05);">
+            <h3 style="margin-bottom: 15px;">Une question sur les leaks ou le site ?</h3>
+            <a href="questions.html" class="btn-spike" style="background-color: #51e443; color: black; text-decoration: none; box-shadow: 8px 8px 0px #2d8a25;">
+                🌵 PARLER À L'IA (SPIKE BOT)
+            </a>
         </div>
 
         <div class="progress-container">
