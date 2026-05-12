@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Actualités - MAX</title>
+    <style>
+        body { font-family: 'Arial Black', sans-serif; margin: 0; background: #000; color: white; display: flex; flex-direction: column; min-height: 100vh; }
+        .navbar { display: flex; align-items: center; padding: 25px; border-bottom: 8px solid #e74c3c; background: #111; }
+        .menu-lines { font-size: 40px; cursor: pointer; color: #e74c3c; margin-right: 30px; }
+        .content { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px; }
+        .no-news { border: 8px solid #e74c3c; padding: 50px; border-radius: 40px; background: #1a1a1a; box-shadow: 0 0 30px #e74c3c; }
+        #sideMenu { height: 100%; width: 0; position: fixed; z-index: 2000; top: 0; left: 0; background-color: #e74c3c; overflow-x: hidden; transition: 0.4s; padding-top: 60px; }
+        #sideMenu a { padding: 25px 40px; text-decoration: none; font-size: 32px; color: white; display: block; font-weight: 900; }
+    </style>
+</head>
+<body>
+    <div id="sideMenu">
+        <a href="javascript:void(0)" onclick="closeNav()">&times;</a>
+        <a href="index.html">ACCUEIL</a>
+        <a href="staff.html">L'ÉQUIPE (STAFF)</a>
+        <a href="actu.html">ACTUALITÉS</a>
+        <a href="questions.html">QUESTIONS</a>
+        <a href="liens.html">RESEAUX SOCIAUX</a>
+    </div>
+    <div class="navbar"><div class="menu-lines" onclick="openNav()">☰</div><div>ACTUS BRAWL</div></div>
+    <div class="content">
+        <div class="no-news">
+            <h1 style="font-size: 50px;">AUCUNE ACTU... 🥱</h1>
+            <p style="font-size: 20px;">Repasse demain, le staff dort !</p>
+        </div>
+    </div>
+    <p style="text-align: center; color: #555;">BsMax @ 2026</p>
+    <script>
+        function openNav() { document.getElementById("sideMenu").style.width = "100%"; }
+        function closeNav() { document.getElementById("sideMenu").style.width = "0"; }
+    </script>
+</body>
+</html>
