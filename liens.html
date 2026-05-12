@@ -127,7 +127,7 @@
 
         <h2>Voici la commu de la chaine :</h2>
         <a href="https://chat.whatsapp.com/DU07U24caJ9LEbZK5xDuPl" class="btn-main">👥 GROUPE WHATSAPP</a>
-        <a href="https://discord.gg/s7yUW6RPG" class="btn-main" style="box-shadow: 8px 8px 0px #5865F2;">🎮 DISCORD</a>
+       <a href="https://discord.gg/s7yUW6RPG" class="btn-main" style="box-shadow: 8px 8px 0px var(--bs-green);">🎮 DISCORD</a>
         <a href="https://sites.google.com/view/brawl-stars-max" class="btn-main">🌐 ANCIEN SITE WEB</a>
 
         <h2>🤝 Collaborations</h2>
@@ -140,10 +140,31 @@
 
     <footer>BsMax @ 2026</footer>
 
+   <footer>BsMax @ 2026</footer>
+
     <script>
-        function openNav() { document.getElementById("sideMenu").style.width = "100%"; }
-        function closeNav() { document.getElementById("sideMenu").style.width = "0"; }
-        function toggleDarkMode() { document.body.classList.toggle('dark-mode'); }
+        function openNav() { 
+            document.getElementById("sideMenu").style.width = "100%"; 
+        }
+        
+        function closeNav() { 
+            document.getElementById("sideMenu").style.width = "0"; 
+        }
+
+        // Gère l'activation et la sauvegarde du mode sombre
+        function toggleDarkMode() {
+            const isDark = document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', isDark);
+        }
+
+        // Vérifie la préférence au chargement de la page
+        window.onload = function() {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.body.classList.add('dark-mode');
+            }
+        };
     </script>
+</body>
+</html>
 </body>
 </html>
