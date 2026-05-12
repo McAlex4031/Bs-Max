@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Questions - MAX</title>
+    <style>
+        body { font-family: 'Arial Black', sans-serif; margin: 0; background: #2c3e50; color: white; padding-bottom: 50px; }
+        .navbar { display: flex; align-items: center; padding: 25px; background: #1a252f; border-bottom: 8px solid #9b59b6; }
+        .menu-lines { font-size: 40px; cursor: pointer; color: #9b59b6; margin-right: 25px; }
+        .content { max-width: 900px; margin: auto; padding: 30px; }
+        .btn-big { display: block; background: #9b59b6; color: white; padding: 35px; text-align: center; border-radius: 30px; text-decoration: none; font-size: 30px; border: 6px solid #000; box-shadow: 10px 10px 0px #000; margin-bottom: 40px; }
+        .btn-big:active { transform: scale(0.95); }
+        .info-box { background: white; color: black; padding: 30px; border-radius: 30px; border: 6px solid #000; }
+        #sideMenu { height: 100%; width: 0; position: fixed; z-index: 2000; top: 0; left: 0; background-color: #9b59b6; overflow-x: hidden; transition: 0.4s; padding-top: 60px; }
+        #sideMenu a { padding: 25px 40px; text-decoration: none; font-size: 32px; color: white; display: block; font-weight: 900; }
+    </style>
+</head>
+<body>
+    <div id="sideMenu">
+        <a href="javascript:void(0)" onclick="closeNav()">&times;</a>
+        <a href="index.html">ACCUEIL</a>
+        <a href="staff.html">L'ÉQUIPE (STAFF)</a>
+        <a href="actu.html">ACTUALITÉS</a>
+        <a href="questions.html">QUESTIONS</a>
+        <a href="liens.html">RESEAUX SOCIAUX</a>
+    </div>
+    <div class="navbar"><div class="menu-lines" onclick="openNav()">☰</div><div>FAQ / CONTACT</div></div>
+    <div class="content">
+        <a href="https://forms.gle/votre-lien" class="btn-big">📝 POSTULER AU STAFF</a>
+        <a href="https://ngl.link/votre-pseudo" class="btn-big">🤫 MESSAGE ANONYME</a>
+        <div class="info-box">
+            <h2>💡 QUESTIONS UTILES :</h2>
+            <ul style="font-size: 20px; line-height: 1.8;">
+                <li>"Comment rejoindre le club ?"</li>
+                <li>"Prochain tournoi ?"</li>
+                <li>"Conditions pour être Admin ?"</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        function openNav() { document.getElementById("sideMenu").style.width = "100%"; }
+        function closeNav() { document.getElementById("sideMenu").style.width = "0"; }
+    </script>
+</body>
+</html>
