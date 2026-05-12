@@ -2,23 +2,98 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Staff - MAX</title>
+    <link rel="icon" type="image/png" href="https://files.catbox.moe/p9o75y.png">
     <style>
-        body { font-family: 'Arial Black', sans-serif; margin: 0; background: #1a1a1a; color: white; padding-bottom: 50px; }
-        .navbar { display: flex; align-items: center; padding: 25px; background: #000; border-bottom: 8px solid #0066ff; }
-        .menu-lines { font-size: 40px; cursor: pointer; color: #0066ff; margin-right: 30px; }
-        .content { padding: 30px; max-width: 900px; margin: auto; }
-        .card { background: white; color: #000; padding: 25px; margin-bottom: 25px; border-radius: 25px; border: 6px solid #000; box-shadow: 12px 12px 0px #0066ff; position: relative; }
-        .proprio { background: #ffcb05; box-shadow: 12px 12px 0px #f57900; }
-        h3 { font-size: 24px; margin: 0; }
-        .link-staff { display: inline-block; margin-top: 10px; background: #000; color: #fff; padding: 10px 20px; border-radius: 10px; text-decoration: none; font-size: 14px; }
-        #sideMenu { height: 100%; width: 0; position: fixed; z-index: 2000; top: 0; left: 0; background-color: #0066ff; overflow-x: hidden; transition: 0.4s; padding-top: 60px; }
-        #sideMenu a { padding: 25px 40px; text-decoration: none; font-size: 32px; color: white; display: block; font-weight: 900; }
+        :root { 
+            --bs-blue: #0066ff; 
+            --bs-blue-dark: #0044aa;
+            --bg: #ffffff; 
+            --text: #000000; 
+            --card-bg: #f9f9f9;
+            --border: #000000;
+        }
+        
+        .dark-mode { 
+            --bg: #121212; 
+            --text: #ffffff; 
+            --card-bg: #1e1e1e;
+            --border: var(--bs-blue);
+        }
+
+        body { 
+            background: var(--bg); 
+            color: var(--text); 
+            font-family: 'Lato', sans-serif; 
+            margin: 0; 
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 20px; 
+            background: var(--bg); 
+            border-bottom: 6px solid var(--bs-blue); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000;
+        }
+        
+        .nav-title { font-weight: 900; font-size: 22px; }
+        .menu-lines { font-size: 35px; cursor: pointer; color: var(--bs-blue); }
+        .btn-mode { background: var(--bs-blue); color: #fff; border: none; padding: 10px 20px; border-radius: 12px; cursor: pointer; font-weight: 900; }
+
+        .content { padding: 30px; max-width: 900px; margin: auto; flex: 1; width: 90%; }
+
+        .staff-card { 
+            background: var(--card-bg); 
+            border: 5px solid var(--border); 
+            border-radius: 25px; 
+            padding: 20px; 
+            margin-bottom: 30px; 
+            box-shadow: 10px 10px 0px var(--bs-blue);
+        }
+
+        .proprio-card { 
+            border-color: var(--bs-blue); 
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(0, 102, 255, 0.1) 100%);
+        }
+
+        h2 { margin: 0 0 10px 0; font-size: 24px; color: var(--bs-blue); }
+        .dark-mode h2 { color: #fff; }
+
+        .brawler-fav { color: var(--bs-blue-dark); font-weight: 900; font-size: 18px; }
+        .dark-mode .brawler-fav { color: var(--bs-blue); }
+
+        .btn-wa { 
+            display: inline-block; 
+            margin-top: 15px; 
+            background: #25D366; 
+            color: white; 
+            padding: 12px 20px; 
+            border-radius: 15px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            border: 3px solid #000;
+        }
+
+        #sideMenu { height: 100%; width: 0; position: fixed; z-index: 2000; top: 0; left: 0; background-color: var(--bs-blue); overflow-x: hidden; transition: 0.4s; padding-top: 60px; }
+        #sideMenu a { padding: 20px 40px; text-decoration: none; font-size: 28px; color: white; display: block; font-weight: 900; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        
+        footer { text-align: center; font-size: 12px; padding: 40px; color: gray; }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700;900&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <div id="sideMenu">
-        <a href="javascript:void(0)" onclick="closeNav()">&times;</a>
+        <a href="javascript:void(0)" onclick="closeNav()" style="font-size:50px;">&times;</a>
         <a href="index.html">ACCUEIL</a>
         <a href="staff.html">L'ÉQUIPE (STAFF)</a>
         <a href="actu.html">ACTUALITÉS</a>
@@ -26,26 +101,73 @@
         <a href="liens.html">RESEAUX SOCIAUX</a>
     </div>
 
-    <div class="navbar"><div class="menu-lines" onclick="openNav()">☰</div><div>L'ÉQUIPE DU CANAL</div></div>
+    <div class="navbar">
+        <span class="nav-title">👥 STAFF || MAX 🥱</span>
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <button class="btn-mode" onclick="toggleDarkMode()">🌓 MODE</button>
+            <div class="menu-lines" onclick="openNav()">☰</div>
+        </div>
+    </div>
 
     <div class="content">
-        <div class="card proprio">
-            <h1 style="margin:0;">👑 PROPRIÉTAIRE</h1>
-            <h3>Maxime 222 (Main Léon 🥱)</h3>
-            <p>ID : AptMaxime222</p>
+        <h1 style="text-align: center; font-size: 40px;">L'ÉQUIPE</h1>
+
+        <div class="staff-card proprio-card">
+            <h2>👑 Propriétaire : Maxime 222 🥱</h2>
+            <p class="brawler-fav">Brawler préféré : Léon 🦎</p>
+            <p><b>ID :</b> AptMaxime222</p>
         </div>
 
-        <div class="card"><h3>Admin 1 : Ambre/Shelly 👨‍🦳</h3><a href="https://whatsapp.com/channel/0029Vb5iMDbKgsNkyYTqMX0A" class="link-staff">VOIR CANAL</a></div>
-        <div class="card"><h3>Admin 2 : Kenji/Tick/Arckad 🤔</h3><p>🎨 Artiste du groupe</p></div>
-        <div class="card"><h3>Admin 3 : GAB (Ollie) 🌵</h3><p>ANCIEN PROPRIO</p></div>
-        <div class="card"><h3>Admin 4 : Corbac 🤯</h3><a href="https://whatsapp.com/channel/0029VbBEOfJ2P59orCpaZx1Z" class="link-staff">VOIR CANAL</a></div>
-        <div class="card"><h3>Admin 5 : Élis@ ⍢⃝</h3><a href="https://youtube.com/@mcale.x" class="link-staff">VOIR YOUTUBE</a></div>
-        <div class="card"><h3>Admin 6 : Mandy 🤣</h3><p>8k + 26k</p></div>
-        <div class="card" style="background:#ddd;"><h3>Admin BS : 👻</h3><p>3k tr (Nouveau compte)</p></div>
+        <div class="staff-card">
+            <h2>Admin 1 : 👨‍🦳</h2>
+            <p class="brawler-fav">Brawlers préférés : Ambre 🔥 / Shelly 🔫</p>
+            <a href="https://whatsapp.com/channel/0029Vb5iMDbKgsNkyYTqMX0A" class="btn-wa">Voir chaîne WhatsApp</a>
+        </div>
+
+        <div class="staff-card">
+            <h2>Admin 2 : 🤔</h2>
+            <p class="brawler-fav">Brawlers préférés : Kenji ⚔️ / Tick 💣 / Arckad 🕹️</p>
+            <p>🎨 <i>Artiste : Peut dessiner des Brawlers sur le groupe dessin !</i></p>
+        </div>
+
+        <div class="staff-card">
+            <h2>Admin 3 : 🌵</h2>
+            <p class="brawler-fav">Brawler préféré : Ollie 🛸</p>
+            <p>⚠️ <b>Ancien Propriétaire (GAB)</b></p>
+        </div>
+
+        <div class="staff-card">
+            <h2>Admin 4 : 🤯</h2>
+            <p class="brawler-fav">Brawler préféré : Corbac 🦅</p>
+            <a href="https://whatsapp.com/channel/0029VbBEOfJ2P59orCpaZx1Z" class="btn-wa">Voir chaîne WhatsApp</a>
+        </div>
+
+        <div class="staff-card">
+            <h2>Admin 5 : ⍢⃝</h2>
+            <p class="brawler-fav">Brawler préféré : Gray 🎩</p>
+            <p>📊 <b>Stats :</b> 50k trophées</p>
+            <a href="https://youtube.com/@mcale.x" class="btn-wa" style="background: #FF0000;">Voir chaîne YouTube</a>
+        </div>
+
+        <div class="staff-card">
+            <h2>Admin 6 : 🤣</h2>
+            <p class="brawler-fav">Brawler préféré : Mandy 🍬</p>
+            <p>📊 <b>Stats :</b> 8k + 26k</p>
+        </div>
+
+        <div class="staff-card">
+            <h2>Admin BTAS : 👻</h2>
+            <p>Nouveau compte (3k trophées)</p>
+        </div>
+
     </div>
+
+    <footer>BsMax @ 2026</footer>
+
     <script>
         function openNav() { document.getElementById("sideMenu").style.width = "100%"; }
         function closeNav() { document.getElementById("sideMenu").style.width = "0"; }
+        function toggleDarkMode() { document.body.classList.toggle('dark-mode'); }
     </script>
 </body>
 </html>
