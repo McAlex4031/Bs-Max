@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brawl Stars || MAX</title>
+    <link rel="icon" type="image/png" href="https://files.catbox.moe/1p6p6u.png">
+    <style>
+        :root { --bs-yellow: #ffcb05; --bs-blue: #0066ff; --bs-orange: #f57900; }
+        body { background: #121212; color: white; font-family: 'Arial Black', sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
+        
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 25px; background: #000; border-bottom: 8px solid var(--bs-yellow); position: sticky; top: 0; z-index: 1000; }
+        .menu-lines { font-size: 45px; cursor: pointer; color: var(--bs-yellow); }
+
+        .hero { text-align: center; padding: 60px 20px; background: radial-gradient(circle, #2c3e50 0%, #000 100%); border-bottom: 5px solid #333; }
+        .logo-main { width: 90%; max-width: 450px; filter: drop-shadow(0 10px 20px rgba(255, 203, 5, 0.4)); }
+
+        .progress-section { padding: 40px 20px; text-align: center; }
+        .progress-container { width: 100%; max-width: 650px; background: #333; border: 6px solid #000; border-radius: 60px; margin: 20px auto; height: 60px; position: relative; overflow: hidden; box-shadow: 0 10px 0 #000; }
+        .progress-fill { width: 72%; height: 100%; background: linear-gradient(to bottom, #ffeb3b, #fbc02d); border-right: 5px solid #000; }
+        .progress-text { position: absolute; width: 100%; text-align: center; top: 12px; font-size: 26px; text-shadow: 3px 3px #000; z-index: 2; }
+
+        .content { padding: 30px; max-width: 900px; margin: auto; flex: 1; }
+        .paliers-box { background: #fff; color: #000; border-radius: 30px; padding: 30px; border: 6px solid #000; box-shadow: 15px 15px 0px var(--bs-yellow); }
+        .palier { display: flex; justify-content: space-between; padding: 15px; border-bottom: 3px solid #eee; font-size: 22px; }
+        .done { color: #27ae60; font-weight: bold; }
+        .waiting { color: #c0392b; font-weight: bold; }
+
+        footer { text-align: center; font-size: 16px; padding: 40px; color: #555; background: #000; margin-top: 50px; }
+        #sideMenu { height: 100%; width: 0; position: fixed; z-index: 2000; top: 0; left: 0; background-color: #ffcb05; overflow-x: hidden; transition: 0.4s; padding-top: 60px; }
+        #sideMenu a { padding: 25px 40px; text-decoration: none; font-size: 32px; color: black; display: block; font-weight: 900; border-bottom: 2px solid rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <div id="sideMenu">
+        <a href="javascript:void(0)" onclick="closeNav()" style="font-size:60px;">&times;</a>
+        <a href="index.html">ACCUEIL</a>
+        <a href="staff.html">L'ÉQUIPE (STAFF)</a>
+        <a href="actu.html">ACTUALITÉS</a>
+        <a href="questions.html">QUESTIONS</a>
+        <a href="liens.html">RESEAUX SOCIAUX</a>
+    </div>
+
+    <div class="navbar">
+        <div class="menu-lines" onclick="openNav()">☰</div>
+        <div style="font-size: 28px; font-weight: 900; color: var(--bs-yellow);">MAX || BS</div>
+    </div>
+
+    <div class="hero">
+        <img src="https://files.catbox.moe/1p6p6u.png" class="logo-main" alt="Logo">
+        <h1 style="font-size: 45px; text-shadow: 4px 4px var(--bs-blue);">OBJECTIF 1000 SUBS</h1>
+    </div>
+
+    <div class="progress-section">
+        <div class="progress-container">
+            <div class="progress-text">680 / 700 SUBS</div>
+            <div class="progress-fill"></div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="paliers-box">
+            <h2 style="text-align: center; font-size: 30px; text-decoration: underline;">PALIERS D'ABONNÉS</h2>
+            <div class="palier done"><span>100-150</span><span>✅ Début</span></div>
+            <div class="palier done"><span>200</span><span>✅ admin en +</span></div>
+            <div class="palier done"><span>300</span><span>✅ tournoi</span></div>
+            <div class="palier done"><span>400</span><span>✅ défilé de skin</span></div>
+            <div class="palier done"><span>500</span><span>✅ Site web (ici!)</span></div>
+            <div class="palier done"><span>600-650</span><span>✅ concour / admin</span></div>
+            <div class="palier waiting"><span>700</span><span>❌ chaine YouTube</span></div>
+            <div class="palier waiting"><span>800</span><span>❌ concours spécial</span></div>
+            <div class="palier waiting"><span>900</span><span>❌ Team esport</span></div>
+            <div class="palier waiting" style="background: #000; color: #fff; padding: 15px; border-radius: 10px;"><span>1 000</span><span>☠︎ GROSSE RÉCOMPENSE</span></div>
+        </div>
+    </div>
+
+    <footer>BsMax @ 2026</footer>
+
+    <script>
+        function openNav() { document.getElementById("sideMenu").style.width = "100%"; }
+        function closeNav() { document.getElementById("sideMenu").style.width = "0"; }
+    </script>
+</body>
+</html>
