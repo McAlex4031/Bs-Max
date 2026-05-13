@@ -92,9 +92,9 @@
             margin-top: 15px;
             border: 3px solid #000;
             cursor: pointer;
-            transition: transform 0.2s;
+            transition: 0.2s;
         }
-        .btn-chat:hover { transform: scale(1.05); }
+        .btn-chat:hover { transform: scale(1.05); background: var(--bs-purple-dark); }
 
         .btn-anon { 
             display: block; 
@@ -149,8 +149,8 @@
 
         <div class="ia-card">
             <span class="question">🌵 SPIKE IA</span>
-            <p class="answer">Expert du site et de Brawl Stars. Posez vos questions directement ici ! ⚠️NE PAS SURCHARGER DE MESSAGES SINON TEMPORAIREMENT INDISPONIBLE⚠️</p>
-            <button class="btn-chat" onclick="openSpikeChat()">Ouvrir Spike IA</button>
+            <p class="answer">Besoin d'une réponse immédiate ? Pose mes tes questions ici ! ⚠️NE PAS SURCHARGER SINON IA INDISPONIBLE⚠️</p>
+            <button class="btn-chat" id="openChatBtn">Ouvrir Spike IA</button>
         </div>
 
         <h1>Questions fréquemment posées</h1>
@@ -175,27 +175,26 @@
     <footer>BsMax @ 2026</footer>
 
     <script>
-    // Fonctions du menu et dark mode
+    /* Menu & DarkMode */
     function openNav() { document.getElementById("sideMenu").style.width = "100%"; }
     function closeNav() { document.getElementById("sideMenu").style.width = "0"; }
     function toggleDarkMode() {
         const isDark = document.body.classList.toggle('dark-mode');
         localStorage.setItem('darkMode', isDark);
     }
-    window.addEventListener('DOMContentLoaded', (event) => {
+    window.addEventListener('DOMContentLoaded', () => {
         if (localStorage.getItem('darkMode') === 'true') {
             document.body.classList.add('dark-mode');
         }
     });
 
-    // Fonction pour ouvrir le chat proprement
-    function openSpikeChat() {
+    /* Botpress Logic */
+    document.getElementById('openChatBtn').addEventListener('click', () => {
         if (window.botpressWebChat) {
             window.botpressWebChat.sendEvent({ type: 'show' });
-        } else {
-            alert("Le chat est encore en train de charger, réessaie dans 2 secondes !");
+            window.botpressWebChat.sendEvent({ type: 'open' });
         }
-    }
+    });
     </script>
 
     <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
