@@ -73,47 +73,37 @@
         /* Hub IA Section */
         .ia-hub {
             display: flex;
+            justify-content: center;
             gap: 20px;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
             flex-wrap: wrap;
         }
         .ia-card {
             flex: 1;
+            max-width: 500px;
             min-width: 280px;
             background: var(--card-bg);
             border: 4px solid var(--bs-purple);
             border-radius: 20px;
-            padding: 20px;
+            padding: 25px;
             text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         /* Boutons */
-        .btn-club { 
-            display: block; 
-            background: #ffcb05; 
-            color: #000; 
-            text-align: center; 
-            padding: 20px; 
-            border-radius: 20px; 
-            text-decoration: none; 
-            font-size: 24px; 
-            font-weight: 900; 
-            border: 5px solid #000; 
-            margin-bottom: 40px;
-            box-shadow: 0 8px 0 #b38f00;
-        }
-
         .btn-poe {
             display: inline-block;
-            background: #6c5ce7;
+            background: var(--bs-purple);
             color: white;
-            padding: 12px 20px;
+            padding: 15px 25px;
             border-radius: 12px;
             text-decoration: none;
             font-weight: 900;
-            margin-top: 10px;
+            margin-top: 15px;
             border: 3px solid #000;
+            transition: transform 0.2s;
         }
+        .btn-poe:hover { transform: scale(1.05); }
 
         .btn-anon { 
             display: block; 
@@ -157,6 +147,24 @@
     </div>
 
     <div class="content">
+        
+        <div style="background: rgba(155, 89, 182, 0.1); padding: 25px; border-radius: 20px; border-left: 10px solid var(--bs-purple); margin-bottom: 50px; margin-top: 20px;">
+            <h3 style="margin-top: 0;">Posez votre propre question anonymement !</h3>
+            <p>Utilisez les liens ci-dessous pour nous envoyer votre question en privé.</p>
+            
+            <a href="https://helopal.club/an/fr/user198630" class="btn-anon">⚠️ Messages anonymes du proprio</a>
+            <a href="https://helopal.club/an/fr/gab917" class="btn-anon">⚠️ Messages à l'ancien proprio GAB</a>
+        </div>
+
+        <h2 style="text-align: center;">Besoin d'une réponse immédiate ?</h2>
+        <div class="ia-hub">
+            <div class="ia-card">
+                <span class="question">🌵 SPIKE IA</span>
+                <p class="answer">Expert du site et de Brawl Stars. Posez toutes vos questions ici !</p>
+                <a href="https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/05/13/20/20260513205424-E7H3IA1V.json" target="_blank" class="btn-poe">Discuter avec Spike IA</a>
+            </div>
+        </div>
+
         <h1>Questions fréquemment posées</h1>
 
         <div class="faq-section">
@@ -174,29 +182,6 @@
             </div>
         </div>
 
-        <h2 style="text-align: center;">Besoin d'une réponse immédiate ?</h2>
-        <div class="ia-hub">
-            <div class="ia-card">
-                <span class="question">🌵 SPIKE IA (Botpress)</span>
-                <p class="answer">Expert du site. Utilise la bulle en bas à droite ! ⚠️NE PAS SURCHARGER DES MESSAGE SINON IA TEMPORAIREMENT INDISPONIBLE⚠️</p>
-            </div>
-            <div class="ia-card">
-                <span class="question">🤖 ASSISTANT POE</span>
-                <p class="answer">Pour des questions générales sur Brawl Stars, notre site et des leaks. ⚠️NE PAS SURCHARGER DES MESSAGE SINON IA TEMPORAIREMENT INDISPONIBLE⚠️</p>
-                <a href="https://poe.com/invite/076157b9103f47a4947b36cc34fbc5da" target="_blank" class="btn-poe">Ouvrir Poe</a>
-            </div>
-        </div>
-
-        <h2 style="text-align: center;">Comment rejoindre le club ?</h2>
-        <a href="https://link.brawlstars.com/invite/band/fr?tag=JVQPR9V2&token=kecbsap4" class="btn-club">BRAWL STARS : CLUB</a>
-
-        <div style="background: rgba(155, 89, 182, 0.1); padding: 25px; border-radius: 20px; border-left: 10px solid var(--bs-purple); margin-top: 50px;">
-            <h3 style="margin-top: 0;">Posez votre propre question anonymement !</h3>
-            <p>Utilisez les liens ci-dessous pour nous envoyer votre question en privé.</p>
-            
-            <a href="https://helopal.club/an/fr/user198630" class="btn-anon">⚠️ Messages anonymes du proprio</a>
-            <a href="https://helopal.club/an/fr/gab917" class="btn-anon">⚠️ Messages à l'ancien proprio GAB</a>
-        </div>
     </div>
 
     <footer>BsMax @ 2026</footer>
@@ -215,15 +200,5 @@
     });
     </script>
 
-    <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
-    <script src="https://files.bpcontent.cloud/2026/05/12/19/20260512194510-0FOV6V5Q.js" defer></script>
-
-    <script>
-      window.botpressWebChat.onEvent(function () {
-        setTimeout(() => {
-          window.botpressWebChat.sendEvent({ type: 'show' });
-        }, 1000);
-      }, ['LIFECYCLE.LOADED']);
-    </script>
 </body>
 </html>
