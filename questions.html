@@ -54,32 +54,6 @@
         h1 { text-align: center; font-size: 40px; color: var(--bs-purple); margin-bottom: 30px; }
         .dark-mode h1 { color: #fff; }
 
-        /* IA Card */
-        .ia-card {
-            background: var(--card-bg);
-            border: 4px solid var(--bs-purple);
-            border-radius: 20px;
-            padding: 25px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            margin-bottom: 50px;
-        }
-
-        .btn-chat {
-            display: inline-block;
-            background: var(--bs-purple);
-            color: white;
-            padding: 15px 25px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 900;
-            margin-top: 15px;
-            border: 3px solid #000;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-        .btn-chat:hover { transform: scale(1.05); }
-
         /* FAQ Box */
         .faq-section { 
             background: var(--card-bg); 
@@ -142,12 +116,6 @@
             <a href="https://helopal.club/an/fr/gab917" class="btn-anon" style="margin-top:10px;">⚠️ Messages à l'ancien proprio GAB</a>
         </div>
 
-        <div class="ia-card">
-            <span class="question">🌵 SPIKE IA</span>
-            <p class="answer">Expert du site. Pose-moi tes questions directement ici !</p>
-            <button class="btn-chat" onclick="openSpike()">Parler à Spike IA</button>
-        </div>
-
         <h1>Questions fréquemment posées</h1>
         <div class="faq-section">
             <div class="faq-item">
@@ -164,7 +132,7 @@
 
     <footer>BsMax @ 2026</footer>
 
-    <script src="https://cdn.botpress.cloud/webchat/v3/inject.js"></script>
+    <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
     <script src="https://files.bpcontent.cloud/2026/05/13/20/20260513205424-5IKWELC0.js" defer></script>
 
     <script>
@@ -176,20 +144,6 @@
         localStorage.setItem('darkMode', isDark);
     }
     if (localStorage.getItem('darkMode') === 'true') document.body.classList.add('dark-mode');
-
-    /* Fonction d'ouverture forcée du Botpress Widget */
-    function openSpike() {
-        // On vérifie si Botpress est chargé sur la page
-        if (window.botpress) {
-            window.botpress.open(); 
-        } else if (window.botpressWebChat) {
-            // Ancienne version au cas où
-            window.botpressWebChat.sendEvent({ type: 'show' });
-            window.botpressWebChat.sendEvent({ type: 'open' });
-        } else {
-            alert("Spike prépare ses épines... Réessaie dans une seconde !");
-        }
-    }
     </script>
 </body>
 </html>
