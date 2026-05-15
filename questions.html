@@ -76,7 +76,9 @@
             margin-top: 15px;
             border: 3px solid #000;
             cursor: pointer;
+            transition: transform 0.2s;
         }
+        .btn-chat:hover { transform: scale(1.05); }
 
         /* FAQ Box */
         .faq-section { 
@@ -143,7 +145,7 @@
         <div class="ia-card">
             <span class="question">🌵 SPIKE IA</span>
             <p class="answer">Expert du site. Pose-moi tes questions directement ici !</p>
-            <button class="btn-chat" onclick="openSpike()">Ouvrir Spike IA</button>
+            <button class="btn-chat" onclick="openSpike()">Parler à Spike IA</button>
         </div>
 
         <h1>Questions fréquemment posées</h1>
@@ -162,7 +164,7 @@
 
     <footer>BsMax @ 2026</footer>
 
-    <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
+    <script src="https://cdn.botpress.cloud/webchat/v3/inject.js"></script>
     <script src="https://files.bpcontent.cloud/2026/05/13/20/20260513205424-5IKWELC0.js" defer></script>
 
     <script>
@@ -175,13 +177,17 @@
     }
     if (localStorage.getItem('darkMode') === 'true') document.body.classList.add('dark-mode');
 
-    /* Fonction d'ouverture du Bot */
+    /* Fonction d'ouverture forcée du Botpress Widget */
     function openSpike() {
-        if (window.botpressWebChat) {
+        // On vérifie si Botpress est chargé sur la page
+        if (window.botpress) {
+            window.botpress.open(); 
+        } else if (window.botpressWebChat) {
+            // Ancienne version au cas où
             window.botpressWebChat.sendEvent({ type: 'show' });
             window.botpressWebChat.sendEvent({ type: 'open' });
         } else {
-            alert("Spike est encore en train de charger ses épines... Réessaie dans une seconde !");
+            alert("Spike prépare ses épines... Réessaie dans une seconde !");
         }
     }
     </script>
